@@ -3,10 +3,10 @@ from machine import Pin, I2C
 class backpack:
     """ 4-character 7-segment display
         Based on http://multiwingspan.co.uk/pico.php?page=ht16k33
-        $Revision: 1.8 $
+        $Revision: 1.9 $
         $Locker:  $
     """
-    ADDRESS             = 0x71  # avoid conflicts; solder bridge needed on A0
+    ADDRESS             = 0x70  # 0x71 if solder bridge on A0 of backpack
     BLINK_CMD           = 0x80
     CMD_BRIGHTNESS      = 0xE0
     
