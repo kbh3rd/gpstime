@@ -16,11 +16,12 @@ timezones are read from \*nix zoneinfo files.
 
 #### Support for different displays
 
-* As it stands it can use *either* a 4-digit 7-segment LED display
-with a TM1637 interface, such as the ubiquitous 0.56-inch display, *or*
-a 1.2-inch display with an HT16K33 backpack from Adafruit.
-* Other types of displays could be easily incorporated if driven with
-Python modules that implement the class methods ````brightness()```,
+As it stands it can use *either* a 4-digit 7-segment LED display with
+a TM1637 interface, such as the ubiquitous 0.56-inch display, *or* a
+1.2-inch display with an HT16K33 backpack from Adafruit.
+
+Other types of displays could be easily incorporated if driven with
+Python modules that implement the class methods ```brightness()```,
 ```show()```, and ```toggle_colon()``` as used in ```main.py```.
 
 ### Hardware used
@@ -33,7 +34,7 @@ Python modules that implement the class methods ````brightness()```,
 * GM5539 photo resistor or similiar (also called a photodetector, photocell, CdS or photoconductive cell) *optional* [*Amazon*](https://www.amazon.com/BOJACK-Photoresistance-Sensitive-Resistor-GM5539/dp/B08BKRPBVL)
 * 10K Ohm resistor *optional* for use in conjunction with the photo resistor
 * Momentary contact button for timezone selection *optional*
-* Circuit board of choice. (One that mimics a breadboard make it easy: [*DigiKey*](https://www.digikey.com/en/products/detail/digikey/DKS-SOLDERBREAD-02/15970925))
+* Circuit board of choice. (One that mimics a breadboard makes it easy: [*DigiKey*](https://www.digikey.com/en/products/detail/digikey/DKS-SOLDERBREAD-02/15970925))
 
 Most of these are available on Amazon, too, and some direct from AdaFruit.
 
