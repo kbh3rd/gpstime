@@ -1,7 +1,7 @@
 ## GPS Clock
 
 A simple digital clock that requires *no network* and *never* needs setting
-implemented in MicroPython on the Raspberry Pi **Pico**.
+that is implemented on the Raspberry Pi **Pico** in MicroPython.
 
 ### Features
 
@@ -45,10 +45,10 @@ Most of these are available on Amazon, too, and some direct from AdaFruit.
 These external modules are used (some modified from original) in addition
 to the software unique to this project:
 
-* Interface to the GPS module: [microGPS](https://github.com/inmcm/micropyGPS/)
-* Interface to the TM1637-driven display: [MicroPython TM1637](https://github.com/mcauser/micropython-tm1637) *locally modified*
-* Interface to the HT16K33-driven display: [MultiWingSpan HT16K33](http://multiwingspan.co.uk/pico.php?page=ht16k33) *locally modified*
-* Interface to the DS3231 RTC: [micropython-tm1637](https://github.com/mcauser/micropython-tm1637) *locally modified*
+
+* ```micropyGPS.py```: Interface to the GPS module: [microGPS](https://github.com/inmcm/micropyGPS/)
+* ```tm1637.py```: Interface to the TM1637-driven display: [MicroPython TM1637](https://github.com/mcauser/micropython-tm1637) *locally modified*
+* ```ht16k33.py```: Interface to the HT16K33-driven display: [MultiWingSpan HT16K33](http://multiwingspan.co.uk/pico.php?page=ht16k33) *locally modified*
 
 #### Project code
 
@@ -56,6 +56,7 @@ Developed specifically for this project, mostly by hand, some with the
 assistance of AI (see *AI Disclosure* below):
 
 
+* ```ds3231.py```: Interface to the DS3231 real-time clock (RTC)
 * ```epoch.py```: Conversion of a calendar date and time to Unix Epoch seconds
 * ```event_timer.py```: Simple polled event timer class
 * ```lightsensor.py```: Interface to a photo resistor to get a brightness value for the display
@@ -114,8 +115,8 @@ in MicroPython. (The seconds value was being passed as a float.) It
 works fine when sticking to long integers.
 * Gemini was used to generate the code in ```tzoneinfo.py``` that reads the
 binary zoneinfo files.
-* Grok was used to add ```set_colon()``` and ```toggle_colon()```
-methods to ```tm1637.py```.
+* Grok was used to add ```set_colon()``` and ```toggle_colon()``` methods to ```tm1637.py```.
+* Grok wrote ```ds3231.py```.
 
 ### Enclosure
 
