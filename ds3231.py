@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# $Revision: 1.3 $     $Locker:  $
+# $Revision: 1.5 $     $Locker:  $
 
 import machine
 import time
@@ -8,14 +8,12 @@ class rtc :
     """ DS3231 Realtime Clock Module interface
     """
 
-    SDA = 8 # Pico position 11
-    SCL = 9 # Pico position 12
     I2C_ADDR = 0x68  # I2C address of DS3231
 
-    def __init__ (self) :
+    def __init__ (self, sda_pin=12, scl_pin=13, i2c_bus=0) :
 
         # Initialize I2C on bus 0 with specified pins
-        self.i2c = machine.I2C(0, scl=machine.Pin(rtc.SCL), sda=machine.Pin(rtc.SDA))
+        self.i2c = machine.I2C(i2c_bus, scl=machine.Pin(scl_pin), sda=machine.Pin(sda_pin))
 
     @staticmethod
     def int_to_bcd(n):
@@ -66,7 +64,10 @@ class rtc :
 
 if __name__ == "__main__" :
 
-    myrtc = rtc()
+    PIN_RTC_SDA = 12 #16
+    PIN_RTC_CLK = 13 #17
+
+    myrtc = rtc(sda_pin=PIN_RTC_SDA, scl_pin=PIN_RTC_CLK)
     # Example: Set initial time (uncomment and adjust to current time, then re-comment after first run)
     # myrtc.set_time(2026, 1, 24, 15, 9, 0)  # YYYY, MM, DD, HH, MM, SS (24-hour format)
 

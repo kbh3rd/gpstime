@@ -3,7 +3,7 @@ from machine import Pin, I2C
 class backpack:
     """ 4-character 7-segment display
         Based on http://multiwingspan.co.uk/pico.php?page=ht16k33
-        $Revision: 1.6 $
+        $Revision: 1.8 $
         $Locker:  $
     """
     ADDRESS             = 0x71  # avoid conflicts; solder bridge needed on A0
@@ -106,8 +106,10 @@ class backpack:
             self.buffer[4] &= 0xFD
             self.colon_set = False
 
-    def toggle_colon(self):
+    def toggle_colon(self, update_display=False):
         self.set_colon(not self.colon_set)
+        if update_display :
+            self.update_display()
 
     # ──────────────────────────────────────────────
     #  NEW: Display a string (up to 4 chars)
@@ -158,8 +160,11 @@ class backpack:
 if __name__ == "__main__" :
     from time import sleep
 
+    PIN_DISP_DIO = 6 #9
+    PIN_DISP_CLK = 7 #10
+
     # declare an instance
-    f = backpack(1, 18,19) # bus, data, clock
+    f = backpack(1, PIN_DISP_DIO,PIN_DISP_CLK) # bus, data, clock
     # f.brightness(6)
 
     # decimals on
