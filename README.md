@@ -26,15 +26,15 @@ Python modules that implement the class methods ```brightness()```,
 
 ### Hardware used
 
-* Raspberry Pi Pico 2 (or original Pico) [*DigiKey*](https://www.digikey.com/en/products/detail/raspberry-pi/SC1632/26241102)
-* Neo-6M GPS module [*Amazon*](https://www.amazon.com/HiLetgo-GY-NEO6MV2-Controller-Ceramic-Antenna/dp/B01D1D0F5M)
-* TM1637 4-digit 7-segment display (typically 0.56-inch tall) [*Amazon*](https://www.amazon.com/DAOKI-Display-Segment-Digital-Arduino/dp/B0821451V7)
-* *or* HT16K33-driven 4-digit 7-segment 1.2-inch display [*DigiKey*](https://www.digikey.com/en/products/detail/adafruit-industries-llc/1270/6618727)
-* DS3231 battery-backed real-time clock (RTC) *optional* [*Jameco*](https://www.jameco.com/z/DS3231-Jameco-ValuePro-DS3231-Real-Time-Clock-Module-Breakout-Board_2217625.html)
-* GM5539 photo resistor or similiar (also called a photodetector, photocell, CdS or photoconductive cell) *optional* [*Amazon*](https://www.amazon.com/BOJACK-Photoresistance-Sensitive-Resistor-GM5539/dp/B08BKRPBVL)
-* 10K Ohm resistor *optional* for use in conjunction with the photo resistor
-* Momentary contact button for timezone selection *optional*
-* Circuit board of choice. (One that mimics a breadboard makes it easy: [*DigiKey*](https://www.digikey.com/en/products/detail/digikey/DKS-SOLDERBREAD-02/15970925))
+* __Raspberry Pi Pico 2__ (or original Pico) [*DigiKey*](https://www.digikey.com/en/products/detail/raspberry-pi/SC1632/26241102)
+* __Neo-6M__ GPS module [*Amazon*](https://www.amazon.com/HiLetgo-GY-NEO6MV2-Controller-Ceramic-Antenna/dp/B01D1D0F5M)
+* __TM1637__ 4-digit 7-segment display (typically 0.56-inch tall) [*Amazon*](https://www.amazon.com/DAOKI-Display-Segment-Digital-Arduino/dp/B0821451V7)
+* *or* __HT16K33__-driven 4-digit 7-segment 1.2-inch display [*DigiKey*](https://www.digikey.com/en/products/detail/adafruit-industries-llc/1270/6618727)
+* __DS3231__ battery-backed real-time clock (RTC) *optional* [*Jameco*](https://www.jameco.com/z/DS3231-Jameco-ValuePro-DS3231-Real-Time-Clock-Module-Breakout-Board_2217625.html)
+* __GM5539__ photo resistor or similiar (also called a photodetector, photocell, CdS or photoconductive cell) *optional* [*Amazon*](https://www.amazon.com/BOJACK-Photoresistance-Sensitive-Resistor-GM5539/dp/B08BKRPBVL)
+* __10K Ohm resistor__ *optional* for use in conjunction with the photo resistor
+* Momentary contact __button__ for timezone selection *optional*
+* __Circuit board__ of choice. (One that mimics a breadboard makes it easy: [*DigiKey*](https://www.digikey.com/en/products/detail/digikey/DKS-SOLDERBREAD-02/15970925))
 
 Most of these are available on Amazon, too, and some direct from AdaFruit.
 
