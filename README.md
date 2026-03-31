@@ -1,26 +1,27 @@
 ## GPS Clock
 
-A Raspberry Pi **Pico** implementation in MicroPython of a simple digital
-clock that requires no network and *never* needs setting.
+A simple digital clock that requires *no network* and *never* needs setting
+implemented in MicroPython on the Raspberry Pi **Pico**.
 
 ### Features
 
 #### Zero-touch
 
-* Automatic time.  The clock gets its time from a GPS module and
+* **Automatic time**.  The clock gets its time from a **GPS** module and
 optionally uses a battery-backed real-time clock for when the GPS fix
 is lost or while waiting for a GPS fix at startup.
-* Automatic Daylight Savings Time (DST) setting. Transitions for several
+* **Automatic Daylight Savings Time (DST) setting**. Transition data for several
 timezones are read from \*nix zoneinfo files.
-* Automatic display dimming based on ambient light level.
+* **Automatic display dimming** based on ambient light level.
 
 #### Support for different displays
 
-* As it stands it can use *either* the ubiquitous 0.56-inch TM1637-driven
-4-digit 7-segment display *or* a 1.2-inch display with an HT16K33 backpack
-from Adafruit.
-* Other types of displays could be easily incorporated with Python modules
-that mimic initialization and the few class methods used in ```main.py```.
+* As it stands it can use *either* a 4-digit 7-segment LED display
+with a TM1637 interface, such as the ubiquitous 0.56-inch display, *or*
+a 1.2-inch display with an HT16K33 backpack from Adafruit.
+* Other types of displays could be easily incorporated if driven with
+Python modules that implement the class methods ````brightness()```,
+```show()```, and ```toggle_colon()``` as used in ```main.py```.
 
 ### Hardware used
 
@@ -30,8 +31,8 @@ that mimic initialization and the few class methods used in ```main.py```.
 * *or* HT16K33-driven 4-digit 7-segment 1.2-inch display [*DigiKey*](https://www.digikey.com/en/products/detail/adafruit-industries-llc/1270/6618727)
 * DS3231 battery-backed real-time clock (RTC) *optional* [*Jameco*](https://www.jameco.com/z/DS3231-Jameco-ValuePro-DS3231-Real-Time-Clock-Module-Breakout-Board_2217625.html)
 * GM5539 photo resistor or similiar (also called a photodetector, photocell, CdS or photoconductive cell) *optional* [*Amazon*](https://www.amazon.com/BOJACK-Photoresistance-Sensitive-Resistor-GM5539/dp/B08BKRPBVL)
-* 10K Ohm resistor
-* Momentary contact button
+* 10K Ohm resistor *optional* for use in conjunction with the photo resistor
+* Momentary contact button for timezone selection *optional*
 * Circuit board of choice. (One that mimics a breadboard make it easy: [*DigiKey*](https://www.digikey.com/en/products/detail/digikey/DKS-SOLDERBREAD-02/15970925))
 
 Most of these are available on Amazon, too, and some direct from AdaFruit.
@@ -71,11 +72,11 @@ else, including a county that has its own rules, upload the right file
 from Linux and edit ```mytz.py```.
 
 At the moment the data runs through the year 2037. (We all know what
-happens at 3:14:08 UTC on January 19, 2038, right?)  The binary zoneinfo files should be able to
-handle 64-bit times in the Unix epoch past 2038. I have not yet looked
-into whether they just haven't been updated yet (that's still 12 years
-away as of this writing), or if the decoder code didn't handle that
-part right.
+happens at 3:14:08 UTC on January 19, 2038, right?)  The binary zoneinfo
+files should be able to handle 64-bit times in the Unix epoch past
+2038. I have not yet looked into whether they just haven't been updated
+yet (that's still 12 years away as of this writing), or if the decoder
+code didn't handle that part right.
 
 The code in ```main.py``` supports changing timezones with a button --
 the sole button on the clock. It cycles between the 6 standard zones
@@ -84,6 +85,9 @@ Arizona which does not observe DST. The currently selected zone is saved
 in the onboard file ```defaultzone``` and becomes the default when the
 device restarts. You can pre-populate this if you want; it must match
 the file name in ```zoneinfo``` exactly without the path.
+
+The button can be omitted from the build if ```defaultzone``` is set
+manually when configuring the device.
 
 #### To do
 
