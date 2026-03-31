@@ -92,7 +92,8 @@ for dates 2038 and beyond
 * Indicate when the GPS fix has been lost somehow?
 * Make a Fritzing schematic of the circuit. Meanwhile the connections
 are given in **gpsclock-wiring.ods** and are pretty simple. (Also see
-the setup section in ```main.py```)
+the setup section in ```main.py```) **NOTE: The .ods file is out of date
+and incorrect.** This note will be removed when it's been updated.
 * Move configuration to a separate file for easier customization
 * *Et cetera*
 
@@ -121,3 +122,7 @@ to size by scoring it several times with a utility knife and carefully
 striking the edge; find instructional videos on YouTube for how to cut
 acrylic or plexiglass sheets. Use proper personal protective gear such
 as eye protection and work gloves.
+
+![Photo of clock front](docs/gpsclock_front.jpg "Front of completed clock")
+![Photo of clock back showing components](docs/gpsclock_back.jpg "Open back with components")
+
