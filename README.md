@@ -31,6 +31,7 @@ that mimic initialization and the few class methods used in ```main.py```.
 * DS3231 battery-backed real-time clock (RTC) *optional* [*Jameco*](https://www.jameco.com/z/DS3231-Jameco-ValuePro-DS3231-Real-Time-Clock-Module-Breakout-Board_2217625.html)
 * GM5539 photo resistor or similiar (also called a photodetector, photocell, CdS or photoconductive cell) *optional* [*Amazon*](https://www.amazon.com/BOJACK-Photoresistance-Sensitive-Resistor-GM5539/dp/B08BKRPBVL)
 * 10K Ohm resistor
+* Momentary contact button
 * Circuit board of choice. (One that mimics a breadboard make it easy: [*DigiKey*](https://www.digikey.com/en/products/detail/digikey/DKS-SOLDERBREAD-02/15970925))
 
 Most of these are available on Amazon, too, and some direct from AdaFruit.
