@@ -119,6 +119,10 @@ busses as in this build.
 extended zone files correctly
 for dates 2038 and beyond
 * Indicate when the GPS fix has been lost somehow?
+* Indicate AM/PM, perhaps by using the colon dots to the left of the
+digits on the HT16K33-driven display: lower dot for AM and upper for
+PM. I don't think it too important, though, since this is not an alarm
+clock and I know whether it's day or night without using a clock.
 * Make a Fritzing schematic of the circuit. Meanwhile the connections
 are given in **gpsclock-wiring.ods** and are pretty simple. (Also see
 the setup section in ```main.py```)
@@ -150,6 +154,13 @@ to size by scoring it several times with a utility knife and carefully
 striking the edge; find instructional videos on YouTube for how to cut
 acrylic or plexiglass sheets. Use proper personal protective gear such
 as eye protection and work gloves.
+
+Below is how mine turned out. If doing again I would situate the display
+a little more to the left when looking at it from the front. Because
+the project is coded to show a 12-hour clock, the leftmost digit will
+either be blank or 1.  On the 7-segment display, the 1 is displayed using
+the rightmost vertical segements.  That leaves a blank area to the left
+that is never illuminated, and the display looks off-center.
 
 ![Photo of clock front](docs/gpsclock_front.jpg "Front of completed clock")
 ![Photo of clock back showing components](docs/gpsclock_back.jpg "Open back with components")
