@@ -91,6 +91,28 @@ the file name in ```zoneinfo``` exactly without the path.
 The button can be omitted from the build if ```defaultzone``` is set
 manually when configuring the device.
 
+#### I2C bus caveat
+
+These details are taken into consideration in this build.
+
+The DS3231 RTC communicates with the microcontroller using the I2C
+protocol.  When using a display such as the HT16K33 backpack that also
+uses the I2C protocol, then the devices need to be on different I2C
+busses, _or_ they need to be on the same physical data and clock GPIO
+pins. Each I2C bus is available on more than one set of pins, but only
+on one set at a time.
+
+The DS3231 and HT16K33 in this project are wired to different pins,
+and the need to therefore be on different I2C busses influences _which_
+pins are used: The DS3231 is on GP8 and GP9, which the Pico pinout diagram
+show to be on Bus 0 (ISC0), while the HT16K33 is on GP6 and GP7 on Bus 1
+(I2C1).
+
+Multiple devices sharing the same I2C bus must have unique I2C addresses,
+which is the case with these devices: 0x68 is used by the DS3231 and 0x70
+by default the HT16K33. Nice to know, but not an issue if on different
+busses as in this build.
+
 #### To do
 
 * Double check that ```tzoneinfo.py``` and ```mytz.py``` handle 64-bit
