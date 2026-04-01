@@ -12,7 +12,10 @@ optionally uses a battery-backed real-time clock for when the GPS fix
 is lost or while waiting for a GPS fix at startup.
 * **Automatic Daylight Savings Time (DST) setting**. Transition data for several
 timezones are read from \*nix zoneinfo files.
-* **Automatic display dimming** based on ambient light level.
+* **Automatic time retention** when powered off; will show the right time when
+power is restored.
+* **Automatic display dimming** based on ambient light level; won't light up a
+dark room.
 
 #### Support for different displays
 
@@ -165,3 +168,7 @@ that is never illuminated, and the display looks off-center.
 ![Photo of clock front](docs/gpsclock_front.jpg "Front of completed clock")
 ![Photo of clock back showing components](docs/gpsclock_back.jpg "Open back with components")
 
+The photo resistor/10K Ohm resistor pair are in the picture but not
+labeled.  It's just pointed up in the back of the device. I'd meant to
+have it behind the acryllic faceplate facing forward but missed that
+detail when putting it all together.
