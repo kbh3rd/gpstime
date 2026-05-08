@@ -30,6 +30,7 @@ BUS_RTC = 0 # Must be different than BUS_DISP if not on same pins!
 # GPS UART
 PIN_GPS_TX = 16 #21/20r
 PIN_GPS_RX = 17 #22/19r
+UART_GPS = 0 # refer to pinout diagram for pin selection correspondence
 # Photo diode ADC
 PIN_LIGHT_SENSOR = 26 #31/10r
 # Timezone switch momentary press button pull high/active low
@@ -67,7 +68,7 @@ except :
 debugging = False
 
 # Configure GPS UART (GP4 = TX, GP5 = RX for UART1)
-uart = UART(0, baudrate=9600, tx=Pin(PIN_GPS_TX), rx=Pin(PIN_GPS_RX))
+uart = UART(UART_GPS, baudrate=9600, tx=Pin(PIN_GPS_TX), rx=Pin(PIN_GPS_RX))
 
 # Create GPS parsing object
 # Use 0 local offset (UTC); we'll manage timezones and DST ourselves
